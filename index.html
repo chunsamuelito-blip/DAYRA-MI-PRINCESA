@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Dayra 💜</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a0dad, #b57edc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      padding: 35px 30px;
+      border-radius: 24px;
+      max-width: 430px;
+      text-align: center;
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.3em;
+    }
+
+    h2 {
+      margin: 10px 0 18px;
+      font-weight: normal;
+      opacity: 0.95;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.65;
+    }
+
+    .fecha {
+      margin-top: 15px;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    audio {
+      margin-top: 22px;
+      width: 100%;
+      border-radius: 14px;
+    }
+
+    .firma {
+      margin-top: 24px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    /* Corazones flotando */
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Dayra 💜</h1>
+    <h2>Mi princesa</h2>
+
+    <p>
+      Hice esta página solo para ti,<br>
+      porque hay momentos que no se olvidan<br>
+      y personas que se quedan en el corazón.<br><br>
+      Tu sonrisa ilumina mis días,<br>
+      y cada instante contigo tiene un valor especial ✨
+    </p>
+
+    <div class="fecha">
+      7 de agosto de 2025 💫<br>
+      Nuestro primer beso
+    </div>
+
+    <!-- Música opcional -->
+    <audio controls>
+      <source src="cancion.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
+    </audio>
+
+    <div class="firma">
+      Con todo mi cariño,<br>
+      Roberth 💜
+    </div>
+  </div>
+
+  <script>
+    function crearCorazon() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💜";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+      heart.style.fontSize = 14 + Math.random() * 22 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(crearCorazon, 500);
+  </script>
+
+</body>
+</html>
