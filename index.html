@@ -1,143 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para Dayra 💜</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Para mi princesa Dayra 💜❤️</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, sans-serif;
-    }
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #5a189a, #b00020);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #6a0dad, #b57edc);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      color: #fff;
-    }
+.container {
+    z-index: 2;
+    padding: 20px;
+}
 
-    .card {
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-      padding: 35px 30px;
-      border-radius: 24px;
-      max-width: 430px;
-      text-align: center;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
-      z-index: 2;
-    }
+h1 {
+    font-size: 2.8em;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 2.3em;
-    }
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+}
 
-    h2 {
-      margin: 10px 0 18px;
-      font-weight: normal;
-      opacity: 0.95;
-    }
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
 
-    p {
-      font-size: 1.05em;
-      line-height: 1.65;
-    }
+#no {
+    background: #e0e0e0;
+    color: black;
+    position: absolute;
+}
 
-    .fecha {
-      margin-top: 15px;
-      font-weight: bold;
-      opacity: 0.9;
-    }
+.message {
+    font-size: 1.5em;
+    margin-top: 15px;
+    animation: fade 1s;
+}
 
-    audio {
-      margin-top: 22px;
-      width: 100%;
-      border-radius: 14px;
-    }
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
-    .firma {
-      margin-top: 24px;
-      font-style: italic;
-      opacity: 0.9;
-    }
+.heart {
+    position: absolute;
+    animation: float 6s linear infinite;
+}
 
-    /* Corazones flotando */
-    .heart {
-      position: absolute;
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 18px;
-      animation: float 6s linear infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      20% {
+@keyframes float {
+    from {
+        transform: translateY(100vh);
         opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.4);
-        opacity: 0;
-      }
     }
-  </style>
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+.teamo {
+    position: absolute;
+    font-size: 1.3em;
+    animation: pop 2s forwards;
+}
+
+@keyframes pop {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.8); }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>Dayra 💜</h1>
-    <h2>Mi princesa</h2>
+<div class="container" id="content">
+    <h1>Dayra, mi princesa 💜❤️</h1>
+    <h1>¿Quieres ser mi San Valentín mi amorcito? 💘</h1>
+    <button id="yes">Sí 💕</button>
+    <button id="no">No 🙈</button>
+</div>
 
-    <p>
-      Hice esta página solo para ti,<br>
-      porque hay momentos que no se olvidan<br>
-      y personas que se quedan en el corazón.<br><br>
-      Tu sonrisa ilumina mis días,<br>
-      y cada instante contigo tiene un valor especial ✨
-    </p>
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const content = document.getElementById("content");
 
-    <div class="fecha">
-      7 de agosto de 2025 💫<br>
-      Nuestro primer beso
-    </div>
+noBtn.addEventListener("mouseover", () => {
+    noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    noBtn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+});
 
-    <!-- Música opcional -->
-    <audio controls>
-      <source src="cancion.mp3" type="audio/mpeg">
-      Tu navegador no soporta audio.
-    </audio>
+yesBtn.addEventListener("click", () => {
+    content.innerHTML = `
+        <h1>Gracias por decir que sí,mas te vale JAJAJA 💜</h1>
+        <div class="message">Eres la razón de muchas de mis sonrisas ✨</div>
+        <div class="message">Tu presencia hace mis días más bonitos 💕</div>
+        <div class="message">Prometo cuidarte y estar para ti siempre, Pinky Promise 🥹</div>
+        <div class="message">Feliz San Valentín, mi princesa, aunque CONTIGO TODOS LOS DIAS SON SAN VALENTIN, TE AMOOOOOOOOOOO MUCHO MUCHOTE MI AMORCITO HERMOSA 💜❤️</div>
+    `;
+});
 
-    <div class="firma">
-      Con todo mi cariño,<br>
-      Roberth 💜
-    </div>
-  </div>
+document.body.addEventListener("click", (e) => {
+    const text = document.createElement("div");
+    text.className = "teamo";
+    text.innerText = "Te amo 💜";
+    text.style.left = e.clientX + "px";
+    text.style.top = e.clientY + "px";
+    document.body.appendChild(text);
 
-  <script>
-    function crearCorazon() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerHTML = "💜";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
-      heart.style.fontSize = 14 + Math.random() * 22 + "px";
-      document.body.appendChild(heart);
+    setTimeout(() => text.remove(), 2000);
+});
 
-      setTimeout(() => {
-        heart.remove();
-      }, 7000);
-    }
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = Math.random() > 0.5 ? "💜" : "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 25 + 15 + "px";
+    document.body.appendChild(heart);
 
-    setInterval(crearCorazon, 500);
-  </script>
+    setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
 
 </body>
 </html>
+
+
